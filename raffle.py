@@ -18,6 +18,7 @@ blockHash = raw_input("Hash of block #"+str(blockNum)+": ").strip()
 if not re.match("^[0-9a-fA-F]{64}$", blockHash):
 	print "That is not a Bitcoin block hash"
 	sys.exit(1)
+blockHash = blockHash.lower()
 
 print "Choose a raffle ID like \"mysite.com raffle #104\". The point of this is to ensure that if multiple people run raffles on the same block number, they do not get the same numbers. Use ASCII characters only"
 raffleID = raw_input("Raffle ID: ").strip()
